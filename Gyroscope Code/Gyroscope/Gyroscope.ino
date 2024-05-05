@@ -4,7 +4,7 @@ String serialOutput; //output that will be used by c#
 
 //pushbutton confiration
 bool buttonInputs[] = {false, false, false, false};
-int buttonInputPins[] = {4, 7, 8, 12};
+int buttonInputPins[] = {4, 7, 11, 12};
 
 //joystick configuration
 int joyStickX, joyStickY = 0;
@@ -115,11 +115,17 @@ void loop() {
   Serial.println(GyroZ);*/
 
   // Print the values on the serial
-  for(int i = 0; i<4; i++) {buttonInputs[i] = digitalRead(buttonInputPins[i]); Serial.print(buttonInputs[i]); Serial.print(", ");} 
-  Serial.print("\n");
+  serialOutput = "";
+  for(int i = 0; i<4; i++) serialOutput = serialOutput+ String(digitalRead(buttonInputPins[i])) +",";
+  serialOutput = serialOutput + GyroX + "," + GyroY + "," + GyroZ + ",";
+  serialOutput = serialOutput + int(analogRead(A0)) + "," + int(analogRead(A1));
+
+  Serial.println(serialOutput);
   
   
-}
+  
+  
+} 
 
 //I2C CODE FROM WEBSITE OPEN
 void calculate_IMU_error() {
