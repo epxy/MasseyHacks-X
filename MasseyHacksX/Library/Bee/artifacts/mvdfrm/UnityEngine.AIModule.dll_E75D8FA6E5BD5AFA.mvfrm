@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ObstacleAvoidanceType
 UnityEngine
 NavMeshAgent
@@ -11,3 +12,18 @@ NavMeshTriangulation
 NavMesh
 NavMeshPathStatus
 NavMeshPath
+=======
+ObstacleAvoidanceType
+UnityEngine
+NavMeshAgent
+NavMeshObstacleShape
+NavMeshObstacle
+OffMeshLinkType
+OffMeshLinkData
+OffMeshLink
+NavMeshHit
+NavMeshTriangulation
+NavMesh
+NavMeshPathStatus
+NavMeshPath
+>>>>>>> Stashed changes
